@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Unión y Envasado de Semilla</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin: 0;
+        }
+        form {
+            background-color: white;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="time"],
+        input[type="number"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="button"] {
+            grid-column: span 3;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Formulario de Unión y Envasado de Semilla</h2>
+    <form id="registroForm">
+        <div class="form-group">
+            <label for="codigoOperario">Código Operario:</label>
+            <input type="text" id="codigoOperario" name="codigoOperario">
+        </div>
+        <div class="form-group">
+            <label for="numAmbiente">Número de Ambiente:</label>
+            <input type="number" id="numAmbiente" name="numAmbiente">
+        </div>
+        <div class="form-group">
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha">
+        </div>
+        <div class="form-group">
+            <label for="horaInicio">Hora de Inicio:</label>
+            <input type="time" id="horaInicio" name="horaInicio">
+        </div>
+        <div class="form-group">
+            <label for="horaFinal">Hora Final:</label>
+            <input type="time" id="horaFinal" name="horaFinal">
+        </div>
+        <div class="form-group">
+            <label for="numTarjetas">Número de Tarjetas:</label>
+            <input type="number" id="numTarjetas" name="numTarjetas">
+        </div>
+        <div class="form-group">
+            <label for="numFiguras">Número de Figuras:</label>
+            <input type="number" id="numFiguras" name="numFiguras">
+        </div>
+        <div class="form-group">
+            <label for="numCapachas">Número de Capachas:</label>
+            <input type="number" id="numCapachas" name="numCapachas">
+        </div>
+        <div class="form-group">
+            <label for="clasificacionSemilla">Clasificación de Semilla:</label>
+            <input type="text" id="clasificacionSemilla" name="clasificacionSemilla">
+        </div>
+        <div class="form-group">
+            <label for="cantidadEnvase">Cantidad de Envase:</label>
+            <input type="number" id="cantidadEnvase" name="cantidadEnvase">
+        </div>
+        <div class="form-group">
+            <label for="peso">Peso:</label>
+            <input type="number" id="peso" name="peso">
+        </div>
+        <div class="form-group">
+            <label for="codigoRecepcion">Código de Recepción:</label>
+            <input type="text" id="codigoRecepcion" name="codigoRecepcion">
+        </div>
+        <div class="form-group">
+            <label for="ocurrencias">Ocurrencias:</label>
+            <input type="text" id="ocurrencias" name="ocurrencias">
+        </div>
+        <input type="button" value="Enviar" onclick="registrarUnionEnvasado()">
+    </form>
+
+    <script>
+        function registrarUnionEnvasado() {
+            var codigoOperario = document.getElementById("codigoOperario").value;
+            var numAmbiente = document.getElementById("numAmbiente").value;
+            var fecha = document.getElementById("fecha").value;
+            var horaInicio = document.getElementById("horaInicio").value;
+            var horaFinal = document.getElementById("horaFinal").value;
+            var numTarjetas = document.getElementById("numTarjetas").value;
+            var numFiguras = document.getElementById("numFiguras").value;
+            var numCapachas = document.getElementById("numCapachas").value;
+            var clasificacionSemilla = document.getElementById("clasificacionSemilla").value;
+            var cantidadEnvase = document.getElementById("cantidadEnvase").value;
+            var peso = document.getElementById("peso").value;
+            var codigoRecepcion = document.getElementById("codigoRecepcion").value;
+            var ocurrencias = document.getElementById("ocurrencias").value;
+
+            google.script.run.registrarUnionEnvasado({ 
+                codigoOperario: codigoOperario,
+                numAmbiente: numAmbiente,
+                fecha: fecha,
+                horaInicio: horaInicio,
+                horaFinal: horaFinal,
+                numTarjetas: numTarjetas,
+                numFiguras: numFiguras,
+                numCapachas: numCapachas,
+                clasificacionSemilla: clasificacionSemilla,
+                cantidadEnvase: cantidadEnvase,
+                peso: peso,
+                codigoRecepcion: codigoRecepcion,
+                ocurrencias: ocurrencias
+            });
+
+            document.getElementById("registroForm").reset();
+        }
+    </script>
+</body>
+</html>

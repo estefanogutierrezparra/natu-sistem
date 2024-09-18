@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centrifugado Entrega Secado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin: 0;
+        }
+        form {
+            background-color: white;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="time"],
+        input[type="number"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        input[type="button"] {
+            grid-column: span 3;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Centrifugado Entrega Secado</h2>
+    <form id="registroForm">
+        <div class="form-group">
+            <label for="codigoAuxiliar">Código Auxiliar:</label>
+            <input type="text" id="codigoAuxiliar" name="codigoAuxiliar">
+        </div>
+        <div class="form-group">
+            <label for="codigoSecador">Código Secador:</label>
+            <input type="text" id="codigoSecador" name="codigoSecador">
+        </div>
+        <div class="form-group">
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha">
+        </div>
+        <div class="form-group">
+            <label for="horaInicio">Hora de Inicio:</label>
+            <input type="time" id="horaInicio" name="horaInicio">
+        </div>
+        <div class="form-group">
+            <label for="horaFinal">Hora Final:</label>
+            <input type="time" id="horaFinal" name="horaFinal">
+        </div>
+        <div class="form-group">
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad">
+        </div>
+        <div class="form-group">
+            <label for="peso">Peso:</label>
+            <input type="number" id="peso" name="peso">
+        </div>
+        <div class="form-group">
+            <label for="temperatura">Temperatura:</label>
+            <input type="number" id="temperatura" name="temperatura">
+        </div>
+        <div class="form-group">
+            <label for="comentarios">Comentarios:</label>
+            <input type="text" id="comentarios" name="comentarios">
+        </div>
+        <input type="button" value="Enviar" onclick="registrarCentrifugado()">
+    </form>
+
+    <script>
+        function registrarCentrifugado() {
+            var codigoAuxiliar = document.getElementById("codigoAuxiliar").value;
+            var codigoSecador = document.getElementById("codigoSecador").value;
+            var fecha = document.getElementById("fecha").value;
+            var horaInicio = document.getElementById("horaInicio").value;
+            var horaFinal = document.getElementById("horaFinal").value;
+            var cantidad = document.getElementById("cantidad").value;
+            var peso = document.getElementById("peso").value;
+            var temperatura = document.getElementById("temperatura").value;
+            var comentarios = document.getElementById("comentarios").value;
+
+            // Aquí puedes agregar la lógica para enviar los datos, por ejemplo a un servidor o base de datos.
+            console.log({
+                codigoAuxiliar,
+                codigoSecador,
+                fecha,
+                horaInicio,
+                horaFinal,
+                cantidad,
+                peso,
+                temperatura,
+                comentarios
+            });
+
+            document.getElementById("registroForm").reset();
+        }
+    </script>
+</body>
+</html>

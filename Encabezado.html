@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Registro de Cosecha</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .container div {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+        }
+        input, select, textarea {
+            padding: 8px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        textarea {
+            grid-column: span 4;
+        }
+        input[type="submit"] {
+            grid-column: span 4;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulario de Registro de Cosecha</h1>
+    <form action="/submit" method="post">
+        <div class="container">
+            <div>
+                <label for="numeroGuia">Número de Guía (ID):</label>
+                <input type="text" id="numeroGuia" name="numeroGuia" required>
+            </div>
+            <div>
+                <label for="centroCosto">Centro de Costo:</label>
+                <input type="text" id="centroCosto" name="centroCosto" required>
+            </div>
+            <div>
+                <label for="fechaCosecha">Fecha de Cosecha:</label>
+                <input type="date" id="fechaCosecha" name="fechaCosecha" required>
+            </div>
+            <div>
+                <label for="compania">Compañía:</label>
+                <input type="text" id="compania" name="compania" required>
+            </div>
+            <div>
+                <label for="fechaTrilla">Fecha de Trilla:</label>
+                <input type="date" id="fechaTrilla" name="fechaTrilla" required>
+            </div>
+            <div>
+                <label for="variedad">Variedad:</label>
+                <input type="text" id="variedad" name="variedad" required>
+            </div>
+            <div>
+                <label for="numeroCosecha">N° de Cosecha:</label>
+                <input type="text" id="numeroCosecha" name="numeroCosecha" required>
+            </div>
+            <div>
+                <label for="loteCosecha">Lote de Cosecha:</label>
+                <input type="text" id="loteCosecha" name="loteCosecha" required>
+            </div>
+            <div>
+                <label for="especie">ESPECIE:</label>
+                <select id="especie" name="especie" required>
+                    <option value="TOM_GSPP">TOM GSPP</option>
+                    <option value="TOM_NO_GSPP">TOM NO GSPP</option>
+                    <option value="TOMATILLO_NO_GSPP">TOMATILLO NO GSPP</option>
+                    <option value="PEPPER">PEPPER</option>
+                    <option value="EGGPLANT">EGGPLANT</option>
+                </select>
+            </div>
+            <div>
+                <label for="numeroFrutos">N° de Frutos:</label>
+                <input type="text" id="numeroFrutos" name="numeroFrutos" required>
+            </div>
+            <div>
+                <label for="figura">Figura:</label>
+                <input type="text" id="figura" name="figura" required>
+            </div>
+            <div>
+                <label for="modulo">Módulo:</label>
+                <input type="text" id="modulo" name="modulo" required>
+            </div>
+            <div>
+                <label for="etapa">Etapa:</label>
+                <input type="text" id="etapa" name="etapa" required>
+            </div>
+            <div>
+                <label for="etapaDesplegable">Etapa (Desplegable):</label>
+                <select id="etapaDesplegable" name="etapaDesplegable" required>
+                    <option value="MTC">MTC</option>
+                    <option value="EOL">EOL</option>
+                    <option value="EOV">EOV</option>
+                </select>
+            </div>
+            <div>
+                <label for="reprocesado">Reprocesado:</label>
+                <select id="reprocesado" name="reprocesado" required>
+                    <option value="AW">AW</option>
+                    <option value="HUMEDAD">HUMEDAD</option>
+                    <option value="LIMPIEZA">LIMPIEZA</option>
+                    <option value="TRATAMIENTO">TRATAMIENTO</option>
+                    <option value="NORMAL">NORMAL</option>
+                </select>
+            </div>
+            <div>
+                <label for="observaciones">Observaciones:</label>
+                <textarea id="observaciones" name="observaciones" rows="4" required></textarea>
+            </div>
+            <div>
+                <input type="submit" value="Enviar">
+            </div>
+        </div>
+    </form>
+</body>
+</html>

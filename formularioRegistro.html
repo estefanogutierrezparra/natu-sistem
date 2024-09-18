@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Recepción de Semilla Húmeda y Proceso de Secado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin: 0;
+        }
+        form {
+            background-color: white;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="time"],
+        input[type="number"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="button"] {
+            grid-column: span 3;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Formulario de Recepción de Semilla Húmeda y Proceso de Secado</h2>
+    <form id="registroForm">
+        <div class="form-group">
+            <label for="codigoSecador">Código Secador:</label>
+            <input type="text" id="codigoSecador" name="codigoSecador">
+        </div>
+        <div class="form-group">
+            <label for="codigoRecepcion">Código Recepción:</label>
+            <input type="text" id="codigoRecepcion" name="codigoRecepcion">
+        </div>
+        <div class="form-group">
+            <label for="fechaRecepcion">Fecha de Recepción:</label>
+            <input type="date" id="fechaRecepcion" name="fechaRecepcion">
+        </div>
+        <div class="form-group">
+            <label for="horaRecepcion">Hora de Recepción:</label>
+            <input type="time" id="horaRecepcion" name="horaRecepcion">
+        </div>
+        <div class="form-group">
+            <label for="numAireador">Número Aireador:</label>
+            <input type="number" id="numAireador" name="numAireador">
+        </div>
+        <div class="form-group">
+            <label for="numSecador">Número Secador:</label>
+            <input type="number" id="numSecador" name="numSecador">
+        </div>
+        <div class="form-group">
+            <label for="numNivel">Número Nivel:</label>
+            <input type="number" id="numNivel" name="numNivel">
+        </div>
+        <div class="form-group">
+            <label for="horaInicialAireado">Hora Inicial Aireado:</label>
+            <input type="time" id="horaInicialAireado" name="horaInicialAireado">
+        </div>
+        <div class="form-group">
+            <label for="horaInicialSecado">Hora Inicial Secado:</label>
+            <input type="time" id="horaInicialSecado" name="horaInicialSecado">
+        </div>
+        <div class="form-group">
+            <label for="fechaFinalSecado">Fecha Final Secado:</label>
+            <input type="date" id="fechaFinalSecado" name="fechaFinalSecado">
+        </div>
+        <div class="form-group">
+            <label for="horaFinalSecado">Hora Final Secado:</label>
+            <input type="time" id="horaFinalSecado" name="horaFinalSecado">
+        </div>
+        <div class="form-group">
+            <label for="porcentajeH">Porcentaje H:</label>
+            <input type="number" id="porcentajeH" name="porcentajeH">
+        </div>
+        <div class="form-group">
+            <label for="ocurrencias">Ocurrencias:</label>
+            <input type="text" id="ocurrencias" name="ocurrencias">
+        </div>
+        <input type="button" value="Enviar" onclick="registrarRecepcion()">
+    </form>
+</body>
+</html>
